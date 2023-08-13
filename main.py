@@ -23,7 +23,7 @@ stream.start_stream()
 
 #loop do reconhecimento de fala
 while True:
-    data = stream.read(2048)
+    data = stream.read(4048)
     if len(data) == 0:
         break
     if rec.AcceptWaveform(data):
@@ -38,3 +38,6 @@ while True:
 
             if text == 'que horas são' or text == 'me diga as horas':
                 fala(core.SystemInfo.get_time())
+            elif text == 'desligar':
+                break
+
