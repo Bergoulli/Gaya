@@ -1,7 +1,7 @@
 import datetime
 
 class SystemInfo:
-    def __init__():
+    def __init__(self):
         pass
 
     @staticmethod
