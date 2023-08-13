@@ -30,8 +30,8 @@ commands:
   - command:
     input: Abrir google
     entity: open
-    action: 
+    action: ''
   - command:
     input: Abrir youtube
     entity: open
-    action: 
+    action: ''
