@@ -1,0 +1,4 @@
+open/getCom
+weather/getWeather
+time/getDate
+time/getTime
