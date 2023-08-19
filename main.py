@@ -6,6 +6,7 @@ import json
 import core
 from nlu.classificador import classify
 from keras.models import load_model
+import subprocess
 
 #sintese de fala
 engine = pyttsx3.init()
@@ -35,10 +36,12 @@ def evaluate(text):
         os.system('notepad.exe')
     elif entity == 'open/brave':
         fala('Abrindo o brave')
-        os.system('"C:/Program Files/BraveSoftware/Brave-Browser/Applicationbrave.exe"')
+        bravet = r'"C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe"'
+        subprocess.run(['runas', '/user:Administrator', bravet])
+
     elif entity == 'open/edge':
         fala('Abrindo o edge')
-        os.system('"C:/Program Files (x86)/Microsoft/Edge/Applicationchrome.exe"')
+        os.system("C:/Program Files (x86)/Microsoft/Edge/Applicationchrome.exe")
 
     print(f'texto: {text}, tipo: {entity}')
 
