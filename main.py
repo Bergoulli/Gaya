@@ -36,8 +36,8 @@ def evaluate(text):
         os.system('notepad.exe')
     elif entity == 'open/brave':
         fala('Abrindo o brave')
-        bravet = r'"C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe"'
-        subprocess.run(['runas', '/user:Administrator', bravet])
+        bravet = r'"C:Documentos/brave.lnk"'
+        subprocess.run([bravet])
 
     elif entity == 'open/edge':
         fala('Abrindo o edge')
