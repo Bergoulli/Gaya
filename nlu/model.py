@@ -1,107 +1,71 @@
-
 import yaml
 import numpy as np
-import tensorflow as tf
 from keras.models import Sequential
-from keras.layers import LSTM, Dense, Embedding
+from keras.layers import LSTM, Dense
 from keras.utils import to_categorical
 
-
-
-data = yaml.safe_load(open('nlu\\train.yml', 'r', encoding='utf-8').read())
-
-inputs, outputs = [], []
-
-for command in data['commands']:
-    inputs.append(command['input'].lower())
-    outputs.append('{}/{}'.format(command['entity'], command['action']))
-
-
-# Processar texto: palavras, caracteres, bytes, sub-palavras
-
-
-# Mapear char-idx
-
-max_seq = max([len(bytes(x.encode('utf-8'))) for x in inputs])
-
-print('Maior seq:', max_seq)
-
-# Criar dataset one-hot (número de examplos, tamanho da seq, num caracteres)
-# Criar dataset disperso (número de examplos, tamanho da seq)
-
-# Input Data one-hot encoding
-
-input_data = np.zeros((len(inputs), max_seq, 256), dtype='float32')
-for i, inp in enumerate(inputs):
-    for k, ch in enumerate(bytes(inp.encode('utf-8'))):
-        input_data[i, k, int(ch)] = 1.0
+# Configurações
+max_seq_length = 48
+num_chars = 256
+num_epochs = 128
 
 
 
-# Input data sparse
+#CARREGAMENTO E PROCESSAMENTO DE DADOS
 
-'''
-input_data = np.zeros((len(inputs), max_seq), dtype='int32')
+def load_data(file_path):
+    data = yaml.safe_load(open(file_path, 'r', encoding='utf-8').read())
+    inputs, outputs = [], []
 
-for i, input in enumerate(inputs):
-    for k, ch in enumerate(input):
-        input_data[i, k] = chr2idx[ch]
-'''
+    for command in data['commands']:
+        inputs.append(command['input'].lower())
+        outputs.append('{}/{}'.format(command['entity'], command['action']))
 
-# Output Data
+    return inputs, outputs
 
-labels = set(outputs)
+def process_data(inputs, outputs):
+    max_seq = max([len(bytes(x.encode('utf-8'))) for x in inputs])
 
-fwrite = open('labels.txt', 'w', encoding='utf-8')
+    input_data = np.zeros((len(inputs), max_seq_length, num_chars), dtype='float32')  # Corrigido aqui
+    for i, inp in enumerate(inputs):
+        for k, ch in enumerate(bytes(inp.encode('utf-8'))):
+            if k < max_seq_length:  # Garantir que não ultrapasse max_seq_length
+                input_data[i, k, int(ch)] = 1.0
+            else:
+                break  # Parar de preencher quando atingir o comprimento máximo
 
-label2idx = {}
-idx2label = {}
+    labels = set(outputs)
+    label2idx = {label: idx for idx, label in enumerate(labels)}
+    idx2label = {idx: label for label, idx in label2idx.items()}
 
-for k, label in enumerate(labels):
-    label2idx[label] = k
-    idx2label[k] = label
-    fwrite.write(label + '\n')
-fwrite.close()
+    output_data = [label2idx[output] for output in outputs]
+    output_data = to_categorical(output_data, len(label2idx))
 
-output_data = []
+    return input_data, output_data, idx2label
 
-for output in outputs:
-    output_data.append(label2idx[output])
+#CRIAÇÃO E TREINAMENTO DE MODELO
 
-output_data = to_categorical(output_data, len(output_data))
+def create_model(input_shape, output_shape):
+    model = Sequential()
+    model.add(LSTM(128, input_shape=input_shape))
+    model.add(Dense(output_shape, activation='softmax'))
+    model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['acc'])
+    return model
 
+def train_model(model, input_data, output_data):
+    model.fit(input_data, output_data, epochs=num_epochs)
 
-print(output_data[0])
+def save_model(model, file_path):
+    model.save(file_path)
 
-model = Sequential()
-model.add(LSTM(128))
-model.add(Dense(len(output_data), activation='softmax'))
+if __name__ == "__main__":
+    # Carregar e processar dados
+    inputs, outputs = load_data('nlu\\train.yml')
+    input_data, output_data, idx2label = process_data(inputs, outputs)
 
-model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['acc'])
+    # Criar e treinar o modelo
+    model = create_model((max_seq_length, num_chars), len(idx2label))
+    train_model(model, input_data, output_data)
 
-model.fit(input_data, output_data, epochs=128)
-
-
-#salvar modelo
-
-model.save('model.hdf5')
-
-#classificar texto em uma entidade
-def classify(text):
-    #criar um array de entrar (x)
-    x = np.zeros((1, 48, 256), dtype='float32')
-    #preencher o array com dados de texto
-    for k, ch in enumerate(bytes(text.encode('utf-8'))):
-        x[0, k, int(ch)] = 1.0
-    
-    #Fazer a previsão
-    out = model.predict(x)
-    idx = out.argmax()
-    print(idx2label[idx])
-
-
-#CLASSIFICADOR
-
-while True:
-    text = input('Digite algo: ')
-    classify(text)
+    # Salvar o modelo treinado
+    save_model(model, 'model.hdf5')
