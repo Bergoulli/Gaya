@@ -104,4 +104,4 @@ def classify(text):
 
 while True:
     text = input('Digite algo: ')
-    print(classify(text))
+    classify(text)
