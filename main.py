@@ -38,6 +38,10 @@ def evaluate(text):
         fala('Abrindo o brave')
         bravet = r'"C:Documentos/brave.lnk"'
         subprocess.run([bravet])
+    elif entity == 'open/firefox':
+        fala('Abrindo o firefox')
+        firef = r'"C:/Program Files/Mozilla Firefox"'
+        subprocess.run([firef])
 
     elif entity == 'open/edge':
         fala('Abrindo o edge')

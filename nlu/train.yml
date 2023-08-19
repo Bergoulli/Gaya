@@ -55,6 +55,10 @@ commands:
     input: abrir edigue
     entity: open
     action: edge
+  - command:
+    input: abrir raposa
+    entity: open
+    action: firefox
   #Desligar
   - command:
     input: Desligar

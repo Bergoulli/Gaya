@@ -22,15 +22,3 @@ def classify(model, labels, text):
     out = model.predict(x)
     idx = out.argmax()
     return labels[idx]
-
-# if __name__ == "__main__":
-#     # Carregar o modelo treinado
-#     model = load_model('model.hdf5')
-    
-#     # Carregar rótulos
-#     labels = load_labels('labels.txt')
-
-#     # Classificação de texto em uma entidade
-#     while True:
-#         text = input('Digite algo: ')
-#         classify(model, labels, text)
