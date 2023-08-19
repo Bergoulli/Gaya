@@ -21,6 +21,22 @@ def load_labels(file_path):
         labels = [line.strip() for line in file]
     return labels
 
+def evaluate(text):
+    entity = classify(model_keras, labels, text)
+    if entity == 'time/getTime':
+        fala(core.SystemInfo.get_time())
+
+    elif entity == 'time/getDate':
+        fala(core.SystemInfo.get_date())
+    
+    #Abrir programas
+    if entity == 'open/notas':
+        fala('Abrindo o bloco de notas')
+        os.system('notepad.exe')
+
+    print(f'texto: {text}, tipo: {entity}')
+
+
 model = Model('model')
 labels = load_labels('labels.txt')
 rec = KaldiRecognizer(model, 16000)
@@ -42,19 +58,6 @@ while True:
 
         if result is not None:
             text = result['text']
-            entity = classify(model_keras, labels, text)
-
-
-            if entity == 'time/getTime':
-                fala(core.SystemInfo.get_time())
-
-            elif entity == 'time/getDate':
-                fala(core.SystemInfo.get_date())
-                
-            elif entity == 'close/close':
-                fala('estou desligando')
-                break
-            
-            print(f'texto: {text}, tipo: {entity}')
+            evaluate(text)
 
 

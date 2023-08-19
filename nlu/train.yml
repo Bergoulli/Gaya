@@ -47,6 +47,14 @@ commands:
     input: Abrir o bloco de notas
     entity: open
     action: notas
+  - command:
+    input: Abrir bloco de notas
+    entity: open
+    action: notas
+  - command:
+    input: bloco de notas
+    entity: open
+    action: notas
   #Desligar
   - command:
     input: Desligar

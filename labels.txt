@@ -1,5 +1,5 @@
+open/notas
+weather/getWeather
 time/getDate
 time/getTime
-open/google
-weather/getWeather
 close/close
