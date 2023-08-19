@@ -69,3 +69,10 @@ if __name__ == "__main__":
 
     # Salvar o modelo treinado
     save_model(model, 'model.hdf5')
+
+
+    # Criar e salvar o arquivo de rótulos
+    labels_file = open('labels.txt', 'w', encoding='utf-8')
+    for label in idx2label.values():
+        labels_file.write(label + '\n')
+    labels_file.close()
