@@ -44,9 +44,9 @@ commands:
     action: getWeather
   #Open
   - command:
-    input: Abrir google
+    input: Abrir o bloco de notas
     entity: open
-    action: google
+    action: notas
   #Desligar
   - command:
     input: Desligar
