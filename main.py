@@ -33,6 +33,12 @@ def evaluate(text):
     if entity == 'open/notas':
         fala('Abrindo o bloco de notas')
         os.system('notepad.exe')
+    elif entity == 'open/brave':
+        fala('Abrindo o brave')
+        os.system('"C:/Program Files/BraveSoftware/Brave-Browser/Applicationbrave.exe"')
+    elif entity == 'open/edge':
+        fala('Abrindo o edge')
+        os.system('"C:/Program Files (x86)/Microsoft/Edge/Applicationchrome.exe"')
 
     print(f'texto: {text}, tipo: {entity}')
 

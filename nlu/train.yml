@@ -44,17 +44,17 @@ commands:
     action: getWeather
   #Open
   - command:
-    input: Abrir o bloco de notas
-    entity: open
-    action: notas
-  - command:
     input: Abrir bloco de notas
     entity: open
     action: notas
   - command:
-    input: bloco de notas
+    input: abrir brave
     entity: open
-    action: notas
+    action: brave
+  - command:
+    input: abrir edigue
+    entity: open
+    action: edge
   #Desligar
   - command:
     input: Desligar

@@ -1,5 +1,7 @@
-open/notas
-weather/getWeather
+open/brave
+open/chrome
 time/getDate
+weather/getWeather
+open/notas
 time/getTime
 close/close
