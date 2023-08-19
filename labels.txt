@@ -1,4 +1,5 @@
-weather/getWeather
-time/getTime
-open/None
 time/getDate
+time/getTime
+open/google
+weather/getWeather
+close/close

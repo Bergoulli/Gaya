@@ -46,8 +46,9 @@ commands:
   - command:
     input: Abrir google
     entity: open
-    action: 
+    action: google
+  #Desligar
   - command:
-    input: Abrir youtube
-    entity: open
-    action: 
+    input: Desligar
+    entity: close
+    action: close

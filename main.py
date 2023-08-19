@@ -47,6 +47,13 @@ while True:
 
             if entity == 'time/getTime':
                 fala(core.SystemInfo.get_time())
+
+            elif entity == 'time/getDate':
+                fala(core.SystemInfo.get_date())
+                
+            elif entity == 'close/close':
+                fala('estou desligando')
+                break
             
             print(f'texto: {text}, tipo: {entity}')
 
