@@ -43,24 +43,19 @@ def evaluate(text):
         subprocess.Popen([program], shell=True)
 
     if entity == 'open/notas':
-        fala('Abrindo o bloco de notas')
+        fala('Ok mestre, abrindo o bloco de notas')
         os.system('notepad.exe')
     elif entity == 'open/brave':
-        fala('Abrindo o brave')
+        fala('Ok mestre, abrindo o brave')
         webbrowser.open('https://www.google.com.br/?hl=pt-BR')
     elif entity == 'open/sigaa':
-        fala('Abrindo o sigaa')
+        fala('Ok mestre, abrindo o sigaa')
         webbrowser.open('https://si3.ufc.br/sigaa/verTelaLogin.do')
     elif entity == 'open/insta':
-        fala('Abrindo o instagram')
+        fala('Ok mestre, abrindo o instagram')
         webbrowser.open('https://www.instagram.com/')
-    
-    # Fechar programas
-    if entity == 'close/notas':
-        fala('Fechando o bloco de notas')
-        close_program('notepad.exe')
 
-    print(f'texto: {text}, tipo: {entity}')
+    print(f'tipo: {entity}')
 
 def close_program(name):
     for process in (process for process in psutil.process_iter() if process.name() == name):
@@ -77,6 +72,7 @@ stream.start_stream()
 model_keras = load_model('model.hdf5', compile=False)
 
 # Loop do reconhecimento de fala
+
 while True:
     data = stream.read(4048)
     if len(data) == 0:
@@ -84,7 +80,8 @@ while True:
     if rec.AcceptWaveform(data):
         result = rec.Result()
         result = json.loads(result)
-
-        if result is not None:
-            text = result['text']
+        text = result['text']
+        print(text)
+        
+        if result is not None and 'gaia' in text:
             evaluate(text)

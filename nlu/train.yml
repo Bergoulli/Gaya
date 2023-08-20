@@ -1,81 +1,81 @@
 commands:
   #horas
   - command:
-    input: Que horas são?
+    input: gaia Que horas são?
     entity: time
     action: getTime
   - command:
-    input: Me diga as horas.
+    input: gaia Me diga as horas.
     entity: time
     action: getTime
   - command:
-    input: Pode me dizer que horas são?
+    input: gaia Pode me dizer que horas são?
     entity: time
     action: getTime
   - command:
-    input: horas?
+    input: gaia horas?
     entity: time
     action: getTime
   #data
   - command:
-    input: Qual é a data de hoje?
+    input: gaia Qual é a data de hoje?
     entity: time
     action: getDate
   - command:
-    input: Data de hoje?
+    input: gaia Data de hoje?
     entity: time
     action: getDate
   - command:
-    input: Me fale a data atual.
+    input: gaia Me fale a data atual.
     entity: time
     action: getDate
   #Tempo
   - command:
-    input: Previsão do tempo.
+    input: gaia Previsão do tempo.
     entity: weather
     action: getWeather
   - command:
-    input: Como está o clima.
+    input: gaia Como está o clima.
     entity: weather
     action: getWeather
   - command:
-    input: Qual é a previsão do tempo?
+    input: gaia Qual é a previsão do tempo?
     entity: weather
     action: getWeather
   #Open
   - command:
-    input: Abrir bloco de notas
+    input: gaia Abrir bloco de notas
     entity: open
     action: notas
   - command:
-    input: abrir brave
+    input: gaia abrir brave
     entity: open
     action: brave
   - command:
-    input: abrir sigaa
+    input: gaia abrir sigaa
     entity: open
     action: sigaa
   - command:
-    input: abrir instagram
+    input: gaia abrir instagram
     entity: open
     action: insta
   #Close
   - command:
-    input: fechar bloco de notas
+    input: gaia fechar bloco de notas
     entity: close
     action: notas
   - command:
-    input: feche bloco de notas
+    input: gaia feche bloco de notas
     entity: close
     action: notas
   #Desligar
   - command:
-    input: Desligar
+    input: gaia Desligar
     entity: close
     action: close
   #Conversar
   - command:
-    input: oi tudo bem?
+    input: gaia oi tudo bem?
     entity: fala
     action: normal
 
