@@ -1,10 +1,10 @@
-time/getDate
-open/notas
 open/brave
-open/edge
+open/insta
+open/sigaa
+time/getTime
 close/close
 fala/normal
-open/firefox
-time/getTime
 close/notas
 weather/getWeather
+open/notas
+time/getDate

@@ -52,13 +52,13 @@ commands:
     entity: open
     action: brave
   - command:
-    input: abrir edigue
+    input: abrir sigaa
     entity: open
-    action: edge
+    action: sigaa
   - command:
-    input: abrir raposa
+    input: abrir instagram
     entity: open
-    action: firefox
+    action: insta
   #Close
   - command:
     input: fechar bloco de notas

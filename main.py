@@ -8,7 +8,7 @@ import core
 from nlu.classificador import classify
 from keras.models import load_model
 import subprocess
-import threading
+import webbrowser
 
 # Inicialização da síntese de fala
 engine = pyttsx3.init()
@@ -44,20 +44,16 @@ def evaluate(text):
 
     if entity == 'open/notas':
         fala('Abrindo o bloco de notas')
-        casa = subprocess.Popen(['notepad.exe'], shell=True)
-        program_thread = threading.Thread(target=open_program, args=('notepad.exe',))
-        program_thread.start()
+        os.system('notepad.exe')
     elif entity == 'open/brave':
         fala('Abrindo o brave')
-        bravet = r'"C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe"'
-        subprocess.run([bravet])
-    elif entity == 'open/firefox':
-        fala('Abrindo o firefox')
-        firef = r'"C:/Program Files/Mozilla Firefox.exe"'
-        subprocess.run([firef])
-    elif entity == 'open/edge':
-        fala('Abrindo o edge')
-        os.system("C:/Program Files (x86)/Microsoft/Edge/Applicationchrome.exe")
+        webbrowser.open('https://www.google.com.br/?hl=pt-BR')
+    elif entity == 'open/sigaa':
+        fala('Abrindo o sigaa')
+        webbrowser.open('https://si3.ufc.br/sigaa/verTelaLogin.do')
+    elif entity == 'open/insta':
+        fala('Abrindo o instagram')
+        webbrowser.open('https://www.instagram.com/')
     
     # Fechar programas
     if entity == 'close/notas':
