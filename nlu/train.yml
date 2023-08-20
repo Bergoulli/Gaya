@@ -1,4 +1,20 @@
 commands:
+  #conversa
+  - command: Olá
+    entity: fala
+    action: normal
+  - command: Olá
+    entity: fala
+    action: normal
+  - command: Olá
+    entity: fala
+    action: normal
+  - command: Tudo bem?
+    entity: fala
+    action: normal2
+  - command: Como vai?
+    entity: fala
+    action: normal2
   #horas
   - command:
     input: Que horas são?

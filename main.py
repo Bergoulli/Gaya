@@ -31,6 +31,13 @@ def evaluate(text):
     elif entity == 'time/getDate':
         fala(core.SystemInfo.get_date())
     
+    #conversa
+    if entity =='fala/normal':
+        fala('oi, como vai mestre?')
+    if entity =='fala/normal2':
+        fala('Vou bem mestre, obrigado?')
+
+
     #Abrir programas
     def open_program(program):
         subprocess.Popen([program], shell=True)
