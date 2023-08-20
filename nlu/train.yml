@@ -1,20 +1,4 @@
 commands:
-  #conversa
-  - command: Olá
-    entity: fala
-    action: normal
-  - command: Olá
-    entity: fala
-    action: normal
-  - command: Olá
-    entity: fala
-    action: normal
-  - command: Tudo bem?
-    entity: fala
-    action: normal2
-  - command: Como vai?
-    entity: fala
-    action: normal2
   #horas
   - command:
     input: Que horas são?
@@ -89,3 +73,10 @@ commands:
     input: Desligar
     entity: close
     action: close
+  #Conversar
+  - command:
+    input: oi tudo bem?
+    entity: fala
+    action: normal
+
+    
