@@ -1,5 +1,6 @@
 from vosk import Model, KaldiRecognizer
-import psutil, os
+import psutil
+import os
 import pyaudio
 import pyttsx3
 import json
@@ -9,7 +10,7 @@ from keras.models import load_model
 import subprocess
 import threading
 
-#sintese de fala
+# Inicialização da síntese de fala
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[-2].id)
@@ -25,20 +26,19 @@ def load_labels(file_path):
 
 def evaluate(text):
     entity = classify(model_keras, labels, text)
+    
     if entity == 'time/getTime':
         fala(core.SystemInfo.get_time())
-
     elif entity == 'time/getDate':
         fala(core.SystemInfo.get_date())
     
-    #conversa
-    if entity =='fala/normal':
+    # Conversa
+    if entity == 'fala/normal':
         fala('oi, como vai mestre?')
-    if entity =='fala/normal2':
+    if entity == 'fala/normal2':
         fala('Vou bem mestre, obrigado?')
 
-
-    #Abrir programas
+    # Abrir programas
     def open_program(program):
         subprocess.Popen([program], shell=True)
 
@@ -47,22 +47,19 @@ def evaluate(text):
         casa = subprocess.Popen(['notepad.exe'], shell=True)
         program_thread = threading.Thread(target=open_program, args=('notepad.exe',))
         program_thread.start()
-
     elif entity == 'open/brave':
         fala('Abrindo o brave')
         bravet = r'"C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe"'
         subprocess.run([bravet])
-
     elif entity == 'open/firefox':
         fala('Abrindo o firefox')
         firef = r'"C:/Program Files/Mozilla Firefox.exe"'
         subprocess.run([firef])
-
     elif entity == 'open/edge':
         fala('Abrindo o edge')
         os.system("C:/Program Files (x86)/Microsoft/Edge/Applicationchrome.exe")
     
-    #Fechar programas
+    # Fechar programas
     if entity == 'close/notas':
         fala('Fechando o bloco de notas')
         close_program('notepad.exe')
@@ -70,9 +67,8 @@ def evaluate(text):
     print(f'texto: {text}, tipo: {entity}')
 
 def close_program(name):
-    for process in (process for process in psutil.process_iter() if process.name()=='name'):
+    for process in (process for process in psutil.process_iter() if process.name() == name):
         process.kill()
-
 
 model = Model('model')
 labels = load_labels('labels.txt')
@@ -84,7 +80,7 @@ stream.start_stream()
 
 model_keras = load_model('model.hdf5', compile=False)
 
-#loop do reconhecimento de fala
+# Loop do reconhecimento de fala
 while True:
     data = stream.read(4048)
     if len(data) == 0:
@@ -96,5 +92,3 @@ while True:
         if result is not None:
             text = result['text']
             evaluate(text)
-
-
