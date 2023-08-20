@@ -1,0 +1,3 @@
+- Não consegue funcionar em segundo plano, quando abro o bloco de notas
+- Erros ainda na hora de decidir a resposta
+- Não aceita um train.yml muito grande

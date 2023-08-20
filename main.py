@@ -35,9 +35,6 @@ def evaluate(text):
     # Conversa
     if entity == 'fala/normal':
         fala('oi, como vai mestre?')
-    if entity == 'fala/normal2':
-        fala('Vou bem mestre, obrigado?')
-
     # Abrir programas
     def open_program(program):
         subprocess.Popen([program], shell=True)

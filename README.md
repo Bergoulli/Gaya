@@ -1,5 +1,5 @@
 # Gaia
-Um assistente Virtual feito em Python para trabalhos básicos
+Um assistente Virtual feito em Python para trabalhos básicos funcionando em segundo plano
 
 Tecnologia:
     Reconhecimento de voz, leitura e fala
