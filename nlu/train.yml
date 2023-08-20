@@ -59,6 +59,15 @@ commands:
     input: abrir raposa
     entity: open
     action: firefox
+  #Close
+  - command:
+    input: fechar bloco de notas
+    entity: close
+    action: notas
+  - command:
+    input: feche bloco de notas
+    entity: close
+    action: notas
   #Desligar
   - command:
     input: Desligar

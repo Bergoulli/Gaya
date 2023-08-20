@@ -7,7 +7,7 @@ from keras.utils import to_categorical
 # Configurações
 max_seq_length = 48
 num_chars = 256
-num_epochs = 128
+num_epochs = 512
 
 
 

@@ -1,5 +1,5 @@
 from vosk import Model, KaldiRecognizer
-import os
+import psutil, os
 import pyaudio
 import pyttsx3
 import json
@@ -7,6 +7,7 @@ import core
 from nlu.classificador import classify
 from keras.models import load_model
 import subprocess
+import threading
 
 #sintese de fala
 engine = pyttsx3.init()
@@ -31,23 +32,39 @@ def evaluate(text):
         fala(core.SystemInfo.get_date())
     
     #Abrir programas
+    def open_program(program):
+        subprocess.Popen([program], shell=True)
+
     if entity == 'open/notas':
         fala('Abrindo o bloco de notas')
-        os.system('notepad.exe')
+        casa = subprocess.Popen(['notepad.exe'], shell=True)
+        program_thread = threading.Thread(target=open_program, args=('notepad.exe',))
+        program_thread.start()
+
     elif entity == 'open/brave':
         fala('Abrindo o brave')
-        bravet = r'"C:Documentos/brave.lnk"'
+        bravet = r'"C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe"'
         subprocess.run([bravet])
+
     elif entity == 'open/firefox':
         fala('Abrindo o firefox')
-        firef = r'"C:/Program Files/Mozilla Firefox"'
+        firef = r'"C:/Program Files/Mozilla Firefox.exe"'
         subprocess.run([firef])
 
     elif entity == 'open/edge':
         fala('Abrindo o edge')
         os.system("C:/Program Files (x86)/Microsoft/Edge/Applicationchrome.exe")
+    
+    #Fechar programas
+    if entity == 'close/notas':
+        fala('Fechando o bloco de notas')
+        close_program('notepad.exe')
 
     print(f'texto: {text}, tipo: {entity}')
+
+def close_program(name):
+    for process in (process for process in psutil.process_iter() if process.name()=='name'):
+        process.kill()
 
 
 model = Model('model')

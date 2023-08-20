@@ -1,8 +1,9 @@
+close/close
+open/edge
+open/brave
+time/getTime
+close/notas
+weather/getWeather
 time/getDate
 open/firefox
-close/close
-weather/getWeather
 open/notas
-open/brave
-open/edge
-time/getTime
