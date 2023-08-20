@@ -1,4 +1,4 @@
-# Jibril
+# Gaia
 Um assistente Virtual feito em Python para trabalhos básicos
 
 Tecnologia:
