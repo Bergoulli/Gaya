@@ -6,3 +6,4 @@ keras 2.13.1
 numpy 1.23.5
 Python 3.11.4
 psutil 5.9.5
+Microsoft C++ 2015, 2017, 2019 e 2022
