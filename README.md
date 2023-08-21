@@ -1,4 +1,4 @@
-# Gaia
+# Gaya
 Um assistente Virtual feito em Python para trabalhos básicos funcionando em segundo plano
 
 Tecnologia:
