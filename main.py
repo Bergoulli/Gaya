@@ -82,6 +82,9 @@ while True:
         result = json.loads(result)
         text = result['text']
         print(text)
-        
-        if result is not None and 'gaia' in text:
+
+        if text == 'gaia desligar':
+            break
+
+        elif result is not None and 'gaia' in text:
             evaluate(text)

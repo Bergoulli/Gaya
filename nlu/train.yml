@@ -1,7 +1,7 @@
 commands:
   #horas
   - command:
-  
+
     input: gaia Que horas são?
     entity: time
     action: getTime
@@ -125,12 +125,6 @@ commands:
     input: gaia feche bloco de notas
     entity: close
     action: notas
-
-  #Desligar
-  - command:
-    input: gaia Desligar
-    entity: close
-    action: close
 
   #Conversar
   - command:
