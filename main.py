@@ -9,6 +9,7 @@ from nlu.classificador import classify
 from keras.models import load_model
 import subprocess
 import webbrowser
+import platform
 
 # Inicialização da síntese de fala
 engine = pyttsx3.init()
@@ -35,10 +36,8 @@ def evaluate(text):
     # Conversa
     if entity == 'fala/normal':
         fala('oi, como vai mestre?')
-    # Abrir programas
-    def open_program(program):
-        subprocess.Popen([program], shell=True)
 
+    # Abrir programas
     if entity == 'open/notas':
         fala('Ok mestre, abrindo o bloco de notas')
         os.system('notepad.exe')
@@ -54,6 +53,15 @@ def evaluate(text):
     elif entity == 'open/insta':
         fala('Ok mestre, abrindo o youtube')
         webbrowser.open('https://www.youtube.com/')
+    elif entity == 'open/so':
+        fala('Mestre, seu sistema operacional é')
+        print(platform.platform())
+    elif entity == 'open/process':
+        fala('Mestre, seu processador é')
+        print(platform.processor())
+    elif entity == 'open/bit':
+        fala('Mestre, seu sistema de bits é')
+        print(platform.machine())
 
     print(f'tipo: {entity}')
 
