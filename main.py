@@ -51,6 +51,9 @@ def evaluate(text):
     elif entity == 'open/insta':
         fala('Ok mestre, abrindo o instagram')
         webbrowser.open('https://www.instagram.com/')
+    elif entity == 'open/insta':
+        fala('Ok mestre, abrindo o youtube')
+        webbrowser.open('https://www.youtube.com/')
 
     print(f'tipo: {entity}')
 

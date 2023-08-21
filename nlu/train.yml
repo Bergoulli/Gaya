@@ -1,6 +1,7 @@
 commands:
   #horas
   - command:
+  
     input: gaia Que horas são?
     entity: time
     action: getTime
@@ -16,7 +17,9 @@ commands:
     input: gaia horas?
     entity: time
     action: getTime
+
   #data
+
   - command:
     input: gaia Qual é a data de hoje?
     entity: time
@@ -29,7 +32,9 @@ commands:
     input: gaia Me fale a data atual.
     entity: time
     action: getDate
+
   #Tempo
+
   - command:
     input: gaia Previsão do tempo.
     entity: weather
@@ -42,24 +47,76 @@ commands:
     input: gaia Qual é a previsão do tempo?
     entity: weather
     action: getWeather
+
   #Open
+
   - command:
     input: gaia Abrir bloco de notas
     entity: open
     action: notas
   - command:
+    input: gaia notas
+    entity: open
+    action: notas
+  - command:
+    input: gaia abrir notas
+    entity: open
+    action: notas
+
+  - command:
     input: gaia abrir brave
     entity: open
     action: brave
+  - command:
+    input: gaia abrir o brave
+    entity: open
+    action: brave
+  - command:
+    input: gaia abrir o bravi
+    entity: open
+    action: brave
+
   - command:
     input: gaia abrir sigaa
     entity: open
     action: sigaa
   - command:
+    input: gaia abrir siga
+    entity: open
+    action: sigaa
+  - command:
+    input: gaia abrir o siga
+    entity: open
+    action: sigaa
+
+  - command:
     input: gaia abrir instagram
     entity: open
     action: insta
+  - command:
+    input: gaia abrir insta
+    entity: open
+    action: insta
+  - command:
+    input: gaia abrir o instagram
+    entity: open
+    action: insta
+
+  - command:
+    input: gaia abrir youtube
+    entity: open
+    action: youtube
+  - command:
+    input: gaia abrir o youtube
+    entity: open
+    action: youtube
+  - command:
+    input: gaia youtube
+    entity: open
+    action: youtube
+
   #Close
+
   - command:
     input: gaia fechar bloco de notas
     entity: close
@@ -68,11 +125,13 @@ commands:
     input: gaia feche bloco de notas
     entity: close
     action: notas
+
   #Desligar
   - command:
     input: gaia Desligar
     entity: close
     action: close
+
   #Conversar
   - command:
     input: gaia oi tudo bem?
