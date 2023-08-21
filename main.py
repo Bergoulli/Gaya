@@ -53,15 +53,18 @@ def evaluate(text):
     elif entity == 'open/insta':
         fala('Ok mestre, abrindo o youtube')
         webbrowser.open('https://www.youtube.com/')
-    elif entity == 'open/so':
+    elif entity == 'inf/so':
         fala('Mestre, seu sistema operacional é')
         print(platform.platform())
-    elif entity == 'open/process':
+        fala(platform.platform())
+    elif entity == 'inf/process':
         fala('Mestre, seu processador é')
         print(platform.processor())
-    elif entity == 'open/bit':
+        fala(platform.processor())
+    elif entity == 'inf/bit':
         fala('Mestre, seu sistema de bits é')
         print(platform.machine())
+        fala(platform.machine())
 
     print(f'tipo: {entity}')
 
@@ -92,6 +95,7 @@ while True:
         print(text)
 
         if text == 'gaia desligar':
+            fala('Estou desligando mestre')
             break
 
         elif result is not None and 'gaia' in text:

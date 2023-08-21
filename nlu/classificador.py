@@ -28,7 +28,9 @@ def classify(model, labels, text):
 model = load_model('model.hdf5', compile=False)
 labels = load_labels('labels.txt')
 
+'''
 while True:
     res = input('Digite um texto: ')
     entity = classify(model, labels, res)
     print(entity)
+'''
