@@ -1,7 +1,8 @@
 commands:
-  #horas
-  - command:
 
+  #horas
+
+  - command:
     input: gaia Que horas são?
     entity: time
     action: getTime
@@ -62,6 +63,14 @@ commands:
     input: gaia abrir notas
     entity: open
     action: notas
+  - command:
+    input: gaia abrir minhas notas
+    entity: open
+    action: notas
+  - command:
+    input: gaia bloco de notas
+    entity: open
+    action: notas
 
   - command:
     input: gaia abrir brave
@@ -86,6 +95,14 @@ commands:
     action: sigaa
   - command:
     input: gaia abrir o siga
+    entity: open
+    action: sigaa
+  - command:
+    input: gaia abra o siga
+    entity: open
+    action: sigaa
+  - command:
+    input: gaia ligue o siga
     entity: open
     action: sigaa
 
@@ -128,7 +145,19 @@ commands:
 
   #Conversar
   - command:
-    input: gaia oi tudo bem?
+    input: gaia oi tudo bem
+    entity: fala
+    action: normal
+  - command:
+    input: gaia oi
+    entity: fala
+    action: normal
+  - command:
+    input: gaia olá
+    entity: fala
+    action: normal
+  - command:
+    input: gaia como você está
     entity: fala
     action: normal
   
