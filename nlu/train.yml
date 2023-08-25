@@ -77,6 +77,14 @@ commands:
     entity: open
     action: brave
   - command:
+    input: gaia abrir bravi
+    entity: open
+    action: brave
+  - command:
+    input: gaia brave
+    entity: open
+    action: brave
+  - command:
     input: gaia abrir o brave
     entity: open
     action: brave

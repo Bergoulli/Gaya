@@ -10,6 +10,8 @@ from keras.models import load_model
 import subprocess
 import webbrowser
 import platform
+import pyautogui
+import time
 
 # Inicialização da síntese de fala
 engine = pyttsx3.init()
@@ -44,6 +46,10 @@ def evaluate(text):
     elif entity == 'open/brave':
         fala('Ok mestre, abrindo o brave')
         webbrowser.open('https://www.google.com.br/?hl=pt-BR')
+        pyautogui.moveTo(310,57)
+        time.sleep(5)
+        pyautogui.click()
+        pyautogui.write('Quero que vc va se foder')
     elif entity == 'open/sigaa':
         fala('Ok mestre, abrindo o sigaa')
         webbrowser.open('https://si3.ufc.br/sigaa/verTelaLogin.do')
@@ -83,7 +89,7 @@ stream.start_stream()
 model_keras = load_model('model.hdf5', compile=False)
 
 # Loop do reconhecimento de fala
-
+'''
 while True:
     data = stream.read(4048)
     if len(data) == 0:
@@ -100,3 +106,8 @@ while True:
 
         elif result is not None and 'gaia' in text:
             evaluate(text)
+'''
+while True:
+    resposta = input('Digite sua pergunta: ')
+    text = resposta
+    evaluate(text)

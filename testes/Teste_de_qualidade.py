@@ -1,3 +1,4 @@
+from keras.models import load_model
 import numpy as np
 from keras.models import load_model
 
@@ -23,3 +24,12 @@ def classify(model, labels, text):
     idx = out.argmax()
     return labels[idx]
 
+# AREA PARA TESTE SE ESTÁ OCORRENDO TUDO BEM
+
+model = load_model('model.hdf5', compile=False)
+labels = load_labels('labels.txt')
+
+while True:
+    res = input('Digite um texto: ')
+    entity = classify(model, labels, res)
+    print(entity)
