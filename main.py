@@ -83,7 +83,7 @@ labels = load_labels('labels.txt')
 rec = KaldiRecognizer(model, 16000)
 
 p = pyaudio.PyAudio()
-stream = p.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=2048)
+stream = p.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=4048)
 stream.start_stream()
 
 model_keras = load_model('model.hdf5', compile=False)
