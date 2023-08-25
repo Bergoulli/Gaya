@@ -1,7 +1,8 @@
 commands:
-  #horas
-  - command:
 
+  #horas
+
+  - command:
     input: gaia Que horas são?
     entity: time
     action: getTime
@@ -62,9 +63,25 @@ commands:
     input: gaia abrir notas
     entity: open
     action: notas
+  - command:
+    input: gaia abrir minhas notas
+    entity: open
+    action: notas
+  - command:
+    input: gaia bloco de notas
+    entity: open
+    action: notas
 
   - command:
     input: gaia abrir brave
+    entity: open
+    action: brave
+  - command:
+    input: gaia abrir bravi
+    entity: open
+    action: brave
+  - command:
+    input: gaia brave
     entity: open
     action: brave
   - command:
@@ -86,6 +103,14 @@ commands:
     action: sigaa
   - command:
     input: gaia abrir o siga
+    entity: open
+    action: sigaa
+  - command:
+    input: gaia abra o siga
+    entity: open
+    action: sigaa
+  - command:
+    input: gaia ligue o siga
     entity: open
     action: sigaa
 
@@ -128,8 +153,35 @@ commands:
 
   #Conversar
   - command:
-    input: gaia oi tudo bem?
+    input: gaia oi tudo bem
     entity: fala
     action: normal
+  - command:
+    input: gaia oi
+    entity: fala
+    action: normal
+  - command:
+    input: gaia olá
+    entity: fala
+    action: normal
+  - command:
+    input: gaia como você está
+    entity: fala
+    action: normal
+  
+  #Informações
+  - command:
+    input: gaia qual meu sistema operacional?
+    entity: inf
+    action: so
+  - command:
+    input: gaia qual meu processador?
+    entity: inf
+    action: process
+  - command:
+    input: gaia qual tipo de leitura de bits?
+    entity: inf
+    action: bit
+
 
     

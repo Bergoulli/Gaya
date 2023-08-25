@@ -9,6 +9,9 @@ from nlu.classificador import classify
 from keras.models import load_model
 import subprocess
 import webbrowser
+import platform
+import pyautogui
+import time
 
 # Inicialização da síntese de fala
 engine = pyttsx3.init()
@@ -35,16 +38,18 @@ def evaluate(text):
     # Conversa
     if entity == 'fala/normal':
         fala('oi, como vai mestre?')
-    # Abrir programas
-    def open_program(program):
-        subprocess.Popen([program], shell=True)
 
+    # Abrir programas
     if entity == 'open/notas':
         fala('Ok mestre, abrindo o bloco de notas')
         os.system('notepad.exe')
     elif entity == 'open/brave':
         fala('Ok mestre, abrindo o brave')
         webbrowser.open('https://www.google.com.br/?hl=pt-BR')
+        pyautogui.moveTo(310,57)
+        time.sleep(5)
+        pyautogui.click()
+        pyautogui.write('Quero que vc va se foder')
     elif entity == 'open/sigaa':
         fala('Ok mestre, abrindo o sigaa')
         webbrowser.open('https://si3.ufc.br/sigaa/verTelaLogin.do')
@@ -54,6 +59,18 @@ def evaluate(text):
     elif entity == 'open/insta':
         fala('Ok mestre, abrindo o youtube')
         webbrowser.open('https://www.youtube.com/')
+    elif entity == 'inf/so':
+        fala('Mestre, seu sistema operacional é')
+        print(platform.platform())
+        fala(platform.platform())
+    elif entity == 'inf/process':
+        fala('Mestre, seu processador é')
+        print(platform.processor())
+        fala(platform.processor())
+    elif entity == 'inf/bit':
+        fala('Mestre, seu sistema de bits é')
+        print(platform.machine())
+        fala(platform.machine())
 
     print(f'tipo: {entity}')
 
@@ -72,7 +89,7 @@ stream.start_stream()
 model_keras = load_model('model.hdf5', compile=False)
 
 # Loop do reconhecimento de fala
-
+'''
 while True:
     data = stream.read(4048)
     if len(data) == 0:
@@ -84,7 +101,13 @@ while True:
         print(text)
 
         if text == 'gaia desligar':
+            fala('Estou desligando mestre')
             break
 
         elif result is not None and 'gaia' in text:
             evaluate(text)
+'''
+while True:
+    resposta = input('Digite sua pergunta: ')
+    text = resposta
+    evaluate(text)
