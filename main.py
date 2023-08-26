@@ -38,6 +38,22 @@ def evaluate(text):
     # Conversa
     if entity == 'fala/normal':
         fala('oi, como vai mestre?')
+    elif entity == 'fala/noite':
+        fala('boa noite mestre')
+    elif entity == 'fala/agradecimento':
+        fala('De nada mestre')
+    elif entity == 'fala/mestre':
+        fala('Meu amado mestre Bergoulli')
+    elif entity == 'fala/desculpa':
+        fala('me desculpe mestre')
+    elif entity == 'fala/ia':
+        fala('Sou uma assistente virtual com foco na ajuda de engenheiros eletricistas')
+    elif entity == 'fala/estudar':
+        fala('Ok mestre, vou melhorar meu aprendizado')
+    elif entity == 'fala/ajuda':
+        fala('Ok Mestre, me diga como posso lhe ajudar')
+    elif entity == 'fala/agradecer':
+        fala('muito obrigado mestre')
 
     # Abrir programas
     if entity == 'open/notas':
@@ -71,6 +87,10 @@ def evaluate(text):
         fala('Mestre, seu sistema de bits é')
         print(platform.machine())
         fala(platform.machine())
+    elif entity == 'inf/idade':
+        fala('Mestre, fui criada em 13 de agosto de 2023')
+    elif entity == 'inf/ocupada':
+        fala('Mestre, tenho todo o tempo do mundo para você')
 
     print(f'tipo: {entity}')
 
@@ -83,13 +103,12 @@ labels = load_labels('labels.txt')
 rec = KaldiRecognizer(model, 16000)
 
 p = pyaudio.PyAudio()
-stream = p.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=4048)
+stream = p.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=2048)
 stream.start_stream()
 
 model_keras = load_model('model.hdf5', compile=False)
 
 # Loop do reconhecimento de fala
-'''
 while True:
     data = stream.read(4048)
     if len(data) == 0:
@@ -100,14 +119,10 @@ while True:
         text = result['text']
         print(text)
 
-        if text == 'gaia desligar':
+        if text == 'gaia desligar' or text == 'gaia desliga':
             fala('Estou desligando mestre')
             break
 
         elif result is not None and 'gaia' in text:
             evaluate(text)
-'''
-while True:
-    resposta = input('Digite sua pergunta: ')
-    text = resposta
-    evaluate(text)
+            continue
