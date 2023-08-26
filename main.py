@@ -54,6 +54,8 @@ def evaluate(text):
         fala('Ok Mestre, me diga como posso lhe ajudar')
     elif entity == 'fala/agradecer':
         fala('muito obrigado mestre')
+    elif entity == 'fala/passatempo':
+        fala('Meu passatempo é ler mangás como o meu mestre Bergoulli')
 
     # Abrir programas
     if entity == 'open/notas':
@@ -91,6 +93,8 @@ def evaluate(text):
         fala('Mestre, fui criada em 13 de agosto de 2023')
     elif entity == 'inf/ocupada':
         fala('Mestre, tenho todo o tempo do mundo para você')
+    elif entity == 'inf/feliz':
+        fala('Estou sempre feliz quando estou com você mestre')
 
     print(f'tipo: {entity}')
 
