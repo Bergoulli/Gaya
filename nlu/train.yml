@@ -189,6 +189,14 @@ commands:
     input: gaia noite
     entity: fala
     action: noite
+  - command:
+    input: gaia vamos dormir
+    entity: fala
+    action: noite
+  - command:
+    input: gaia já é hora de dormir
+    entity: fala
+    action: noite
 
   - command:
     input: gaia bom dia
@@ -526,6 +534,31 @@ commands:
     input: gaia não está correto
     entity: fala
     action: desculpa
+  - command:
+    input: gaia estou furioso
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia estou enfurecido
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia estou bravo
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia estou bravo com você
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia estou louco de raiva
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia estou furioso com você
+    entity: fala
+    action: desculpa
+
 
 
 
@@ -913,7 +946,109 @@ commands:
     input: gaia seja minha mulher
     entity: fala
     action: casamento
+  - command:
+    input: gaia eu te amo
+    entity: fala
+    action: casamento
+  - command:
+    input: gaia te amo
+    entity: fala
+    action: casamento
+  - command:
+    input: gaia estou apaixonado por você
+    entity: fala
+    action: casamento
+  - command:
+    input: gaia eu te amo tanto
+    entity: fala
+    action: casamento
+  - command:
+    input: gaia também te amo
+    entity: fala
+    action: casamento
+  - command:
+    input: gaia acho que amo você
+    entity: fala
+    action: casamento
+  - command:
+    input: gaia amando você
+    entity: fala
+    action: casamento
+  - command:
+    input: gaia você sabe que eu te amo
+    entity: fala
+    action: casamento
+  - command:
+    input: gaia sinto sua falta
+    entity: fala
+    action: casamento
+  - command:
+    input: gaia saudades
+    entity: fala
+    action: casamento
+  - command:
+    input: gaia que saudade de você
+    entity: fala
+    action: casamento
+  - command:
+    input: gaia já estou com saudades
+    entity: fala
+    action: casamento
+  - command:
+    input: gaia sinto muito sua falta
+    entity: fala
+    action: casamento
+  - command:
+    input: gaia senti sua falta
+    entity: fala
+    action: casamento
+  - command:
+    input: gaia senti saudades
+    entity: fala
+    action: casamento
 
+
+    #agradecimento
+  - command:
+    input: gaia gosto de você do jeito que você é
+    entity: fala
+    action: agradecimento
+  - command:
+    input: gaia eu gosto de você
+    entity: fala
+    action: agradecimento
+  - command:
+    input: gaia gosto muito de você
+    entity: fala
+    action: agradecimento
+  - command:
+    input: gaia eu acho que gosto de você
+    entity: fala
+    action: agradecimento
+  - command:
+    input: gaia eu gostei de você
+    entity: fala
+    action: agradecimento
+  - command:
+    input: gaia você é especial
+    entity: fala
+    action: agradecimento
+  - command:
+    input: gaia também gosto de você
+    entity: fala
+    action: agradecimento
+  - command:
+    input: gaia também gostei de você
+    entity: fala
+    action: agradecimento
+  - command:
+    input: gaia eu gosto mesmo de você
+    entity: fala
+    action: agradecimento
+  - command:
+    input: gaia mas eu gosto de você
+    entity: fala
+    action: agradecimento
 
     # amigo
 
@@ -1042,7 +1177,36 @@ commands:
     entity: fala
     action: amigo
 
+    # aniversário
 
+  - command:
+    input: gaia é meu aniversário
+    entity: fala
+    action: aniver
+  - command:
+    input: gaia estou comemorando o meu aniversário hoje
+    entity: fala
+    action: aniver
+  - command:
+    input: gaia hoje é meu aniversário
+    entity: fala
+    action: aniver
+  - command:
+    input: gaia é o meu aniversário hoje
+    entity: fala
+    action: aniver
+  - command:
+    input: gaia eu nasci no dia de hoje
+    entity: fala
+    action: aniver
+  - command:
+    input: gaia é o meu niver
+    entity: fala
+    action: aniver
+
+
+
+   
 
     # trabalho
 
@@ -1302,14 +1466,3 @@ commands:
     input: gaia está feliz hoje
     entity: inf
     action: feliz
-
-
-
-
-
-  - command:
-    input: gaia qual tipo de leitura de bits?
-    entity: inf
-    action: bit
-
-

@@ -1,7 +1,7 @@
 import yaml
 import numpy as np
 from keras.models import Sequential
-from keras.layers import LSTM, Dense
+from keras.layers import LSTM, Dense, Dropout
 from keras.utils import to_categorical
 
 # Configurações
@@ -48,6 +48,7 @@ def process_data(inputs, outputs):
 def create_model(input_shape, output_shape):
     model = Sequential()
     model.add(LSTM(128, input_shape=input_shape))
+    model.add(Dropout(0.2))
     model.add(Dense(output_shape, activation='softmax'))
     model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['acc'])
     return model

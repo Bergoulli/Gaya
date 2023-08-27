@@ -63,13 +63,15 @@ def evaluate(text):
     elif entity == 'fala/fome':
         fala('Não mestre, não sinto nenhuma fome ou sede')
     elif entity == 'fala/casamento':
-        fala('Lhe amo mestre, mas isso que você quer é estranho, por favor, não faça mais esse tipo de pergunta')
+        fala('Lhe amo mestre, mas você está indo um pouco longe demais, pare de ser tão solitário')
     elif entity == 'fala/amigo':
         fala('Claro mestre, sempre estarei ao seu lado para o que precisar')
     elif entity == 'fala/trabalho':
         fala('Mestre, eu trabalho no seu computador, lhe ajudando em tarefas corriqueiras')
     elif entity == 'fala/pronto':
         fala('Estou sempre pronto mestre')
+    elif entity == 'fala/aniver':
+        fala('Feliz aniversário mestre, tenha um ótimo dia, carinha feliz')
     elif entity == 'fala/tchau':
         fala('Nos vemos mais tarde mestre')
         #implementar isso pra desligar
