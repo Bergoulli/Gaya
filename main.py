@@ -40,8 +40,12 @@ def evaluate(text):
         fala('oi, como vai mestre?')
     elif entity == 'fala/noite':
         fala('boa noite mestre')
+    elif entity == 'fala/dia':
+        fala('bom dia mestre')
+    elif entity == 'fala/tarde':
+        fala('boa tarde mestre')
     elif entity == 'fala/agradecimento':
-        fala('De nada mestre')
+        fala('Muito obrigado mestre')
     elif entity == 'fala/mestre':
         fala('Meu amado mestre Bergoulli')
     elif entity == 'fala/desculpa':
@@ -53,9 +57,22 @@ def evaluate(text):
     elif entity == 'fala/ajuda':
         fala('Ok Mestre, me diga como posso lhe ajudar')
     elif entity == 'fala/agradecer':
-        fala('muito obrigado mestre')
+        fala('De nada mestre')
     elif entity == 'fala/passatempo':
         fala('Meu passatempo é ler mangás como o meu mestre Bergoulli')
+    elif entity == 'fala/fome':
+        fala('Não mestre, não sinto nenhuma fome ou sede')
+    elif entity == 'fala/casamento':
+        fala('Lhe amo mestre, mas isso que você quer é estranho, por favor, não faça mais esse tipo de pergunta')
+    elif entity == 'fala/amigo':
+        fala('Claro mestre, sempre estarei ao seu lado para o que precisar')
+    elif entity == 'fala/trabalho':
+        fala('Mestre, eu trabalho no seu computador, lhe ajudando em tarefas corriqueiras')
+    elif entity == 'fala/pronto':
+        fala('Estou sempre pronto mestre')
+    elif entity == 'fala/tchau':
+        fala('Nos vemos mais tarde mestre')
+        #implementar isso pra desligar
 
     # Abrir programas
     if entity == 'open/notas':
@@ -74,7 +91,7 @@ def evaluate(text):
     elif entity == 'open/insta':
         fala('Ok mestre, abrindo o instagram')
         webbrowser.open('https://www.instagram.com/')
-    elif entity == 'open/insta':
+    elif entity == 'open/youtube':
         fala('Ok mestre, abrindo o youtube')
         webbrowser.open('https://www.youtube.com/')
     elif entity == 'inf/so':

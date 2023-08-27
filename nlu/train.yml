@@ -173,54 +173,69 @@ commands:
     input: gaia boa noite
     entity: fala
     action: noite
+  - command:
+    input: gaia boa noite para você
+    entity: fala
+    action: noite
+  - command:
+    input: gaia oi boa noite
+    entity: fala
+    action: noite
+  - command:
+    input: gaia olá boa noite
+    entity: fala
+    action: noite
+  - command:
+    input: gaia noite
+    entity: fala
+    action: noite
 
   - command:
-    input: gaia obrigado
+    input: gaia bom dia
     entity: fala
-    action: agradecimento
-    input: gaia isso foi perfeito
+    action: dia
+  - command:
+    input: gaia bom dia para você
     entity: fala
-    action: agradecimento
-    input: gaia excelente
+    action: noite
+  - command:
+    input: gaia oi bom dia
     entity: fala
-    action: agradecimento
-    input: gaia você é fofa
+    action: noite
+  - command:
+    input: gaia olá bom dia
     entity: fala
-    action: agradecimento
-    input: gaia você é atraente
+    action: noite
+  - command:
+    input: gaia dia
     entity: fala
-    action: agradecimento
-    input: gaia você é bonita
-    entity: fala
-    action: agradecimento
-    input: gaia você está bonita hoje
-    entity: fala
-    action: agradecimento
-    input: gaia você é tão bonita
-    entity: fala
-    action: agradecimento
-    input: gaia você está maravilhosa
-    entity: fala
-    action: agradecimento
-    input: gaia você está tão bonita
-    entity: fala
-    action: agradecimento
-    input: gaia você é tão linda
-    entity: fala
-    action: agradecimento
-    input: gaia você é bonita demais
-    entity: fala
-    action: agradecimento
-    input: gaia você está ótima
-    entity: fala
-    action: agradecimento
+    action: noite
 
+  - command:
+    input: gaia boa tarde
+    entity: fala
+    action: tarde
+  - command:
+    input: gaia boa tarde para você
+    entity: fala
+    action: noite
+  - command:
+    input: gaia oi boa tarde
+    entity: fala
+    action: noite
+  - command:
+    input: gaia olá boa tarde
+    entity: fala
+    action: noite
+  - command:
+    input: gaia tarde
+    entity: fala
+    action: noite
 
   - command:
     input: gaia quem lhe criou
     entity: fala
     action: mestre
-
   - command:
     input: gaia o que é você
     entity: fala
@@ -431,6 +446,88 @@ commands:
     input: gaia você não trabalha mais para mim
     entity: fala
     action: desculpa
+  - command:
+    input: gaia bem ruim
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia não está bom o suficiente
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia isso foi ruim
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia isso foi terrível
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia isso é ruim
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia é ruim
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia ruim
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia nada bom
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia acho que isso está ruim
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia não isso está ruim
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia isso estava errado
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia não foi isso o que eu perguntei
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia isso está errado
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia errado
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia não está certo
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia isso não está certo
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia está errado
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia isso está incorreto
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia incorreto
+    entity: fala
+    action: desculpa
+  - command:
+    input: gaia não está correto
+    entity: fala
+    action: desculpa
+
+
 
   - command:
     input: gaia me ajuda
@@ -561,43 +658,503 @@ commands:
     input: gaia você é incrível
     entity: fala
     action: agradecer
+  - command:
+    input: gaia muito bem
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia tão legal
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia legal
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia isso é bom
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia fico feliz em saber disso
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia isso é muito gentil da sua parte
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia formidável
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia é incrível
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia isso é fantástico
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia perfeito
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia você ajudou muito
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia obrigado pela ajuda
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia valeu
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia muito obrigado
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia muitíssimo obrigado
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia obrigadão
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia obrigado mesmo
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia muito obrigado mesmo
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia o que você quiser
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia bom trabalho
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia ótimo trabalho
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia parabéns
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia trabalho excelente
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia ótimo
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia obrigado
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia isso foi perfeito
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia excelente
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia você é fofa
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia você é atraente
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia você é bonita
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia você está bonita hoje
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia você é tão bonita
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia você está maravilhosa
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia você está tão bonita
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia você é tão linda
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia você é bonita demais
+    entity: fala
+    action: agradecer
+  - command:
+    input: gaia você está ótima
+    entity: fala
+    action: agradecer
+
+
+    # passatempo
+  - command:
+    input: gaia qual seu passatempo
+    entity: fala
+    action: passatempo
+  - command:
+    input: gaia passatempo
+    entity: fala
+    action: passatempo
+  - command:
+    input: gaia fala sobre seu passatempo
+    entity: fala
+    action: passatempo
+  - command:
+    input: gaia o que você faz sozinha
+    entity: fala
+    action: passatempo
+  - command:
+    input: gaia qual seu hobbye
+    entity: fala
+    action: passatempo
+  - command:
+    input: gaia o que você gosta
+    entity: fala
+    action: passatempo
+
+
+
+    # fome
+  - command:
+    input: gaia está com fome
+    entity: fala
+    action: fome
+  - command:
+    input: gaia você quer comer
+    entity: fala
+    action: fome
+  - command:
+    input: gaia gostaria de comer alguma coisa
+    entity: fala
+    action: fome
+  - command:
+    input: gaia você está com fome
+    entity: fala
+    action: fome
+  - command:
+    input: gaia você está com tanta fome
+    entity: fala
+    action: fome
+  - command:
+    input: gaia você está com muita fome
+    entity: fala
+    action: fome
+  - command:
+    input: gaia acho que você está com fome
+    entity: fala
+    action: fome
+  - command:
+    input: gaia você está faminto
+    entity: fala
+    action: fome
+  - command:
+    input: gaia você está faminta
+    entity: fala
+    action: fome
+
+
+    # casamento
 
   - command:
-    input: gaia seu hobby
+    input: gaia vamos nos casar
     entity: fala
-    action: agradecer
+    action: casamento
   - command:
-    input: gaia qual é o seu hobby
+    input: gaia você quer casar comigo
     entity: fala
-    action: agradecer
+    action: casamento
   - command:
-    input: gaia o que você faz para se divertir
+    input: gaia quer casar comigo
     entity: fala
-    action: agradecer
+    action: casamento
   - command:
-    input: gaia qual é seu passatempo
+    input: gaia eu amo você quer casar comigo
     entity: fala
-    action: agradecer
+    action: casamento
   - command:
-    input: gaia fale sobre seu passatempo
+    input: gaia case comigo por favor
     entity: fala
-    action: agradecer
+    action: casamento
   - command:
-    input: gaia você tem um passatempo
+    input: gaia nós deveríamos nos casar
     entity: fala
-    action: agradecer
+    action: casamento
   - command:
-    input: gaia e o seu passatempo
+    input: gaia quero me casar com você
     entity: fala
-    action: agradecer
+    action: casamento
   - command:
-    input: gaia seu passatempo
+    input: gaia vamos nos casar
     entity: fala
-    action: agradecer
+    action: casamento
   - command:
-    input: gaia quais são seus passatempos
+    input: gaia seja minha mulher
     entity: fala
-    action: agradecer
+    action: casamento
+
+
+    # amigo
+
+  - command:
+    input: gaia quero um amigo como você
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia quero uma amiga como você
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia somos os melhores amigos do mundo
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia somos amigos
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia quero ser seu amigo
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia somos melhores amigos
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia você é meu amigo
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia somos amigas
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia eu sou sua amiga
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia somos melhores amigas
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia você é minha amiga
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia você é minha melhor amiga
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia você é meu amigo do peito
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia você é meu amigo querido
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia você é minha amiga do peito
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia você é minha amiga querida
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia quero ser sua amigo
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia você quer conversar comigo?
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia dá pra falar comigo?
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia fale comigo
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia você vai conversar comigo?
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia está falando comigo?
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia pode conversar comigo?
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia pode falar comigo?
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia você está aí?
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia você tá aí?
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia você está perto de mim?
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia você está aqui?
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia ainda está por aí?
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia ainda está aí?
+    entity: fala
+    action: amigo
+  - command:
+    input: gaia ainda está por aqui?
+    entity: fala
+    action: amigo
+
+
+
+    # trabalho
+
+  - command:
+    input: gaia você trabalha
+    entity: fala
+    action: trabalho
+  - command:
+    input: gaia onde você trabalha
+    entity: fala
+    action: trabalho
+  - command:
+    input: gaia onde fica seu trabalho
+    entity: fala
+    action: trabalho
+  - command:
+    input: gaia onde fica seu escritório
+    entity: fala
+    action: trabalho
+  - command:
+    input: gaia onde é seu escritório
+    entity: fala
+    action: trabalho
+  - command:
+    input: gaia localização do seu escritório
+    entity: fala
+    action: trabalho
+  - command:
+    input: gaia onde seu escritório está localizado
+    entity: fala
+    action: trabalho
+  - command:
+    input: gaia qual é seu trabalho
+    entity: fala
+    action: trabalho
+
+    #pronta
+
+  - command:
+    input: gaia está pronto
+    entity: fala
+    action: pronto
+  - command:
+    input: gaia está pronta
+    entity: fala
+    action: pronto
+  - command:
+    input: gaia está pronta agora
+    entity: fala
+    action: pronto
+  - command:
+    input: gaia está pronta hoje
+    entity: fala
+    action: pronto
+  - command:
+    input: gaia já está pronto
+    entity: fala
+    action: pronto
+  - command:
+    input: gaia estará pronto hoje à noite
+    entity: fala
+    action: pronto
+  - command:
+    input: gaia você estava pronto
+    entity: fala
+    action: pronto
+  - command:
+    input: gaia você esteve pronto
+    entity: fala
+    action: pronto
+
+    #tchau
+  - command:
+    input: gaia certo nos vemos mais tarde
+    entity: fala
+    action: tchau
+  - command:
+    input: gaia até mais tarde
+    entity: fala
+    action: tchau
+  - command:
+    input: gaia tchau até mais
+    entity: fala
+    action: tchau
+  - command:
+    input: gaia até a próxima
+    entity: fala
+    action: tchau
+  - command:
+    input: gaia tenho que ir
+    entity: fala
+    action: tchau
+  - command:
+    input: gaia tchau
+    entity: fala
+    action: tchau
+  - command:
+    input: gaia até logo
+    entity: fala
+    action: tchau
+  - command:
+    input: gaia até mais
+    entity: fala
+    action: tchau
+  - command:
+    input: gaia nos vemos em breve
+    entity: fala
+    action: tchau
+  - command:
+    input: gaia tchauzinho
+    entity: fala
+    action: tchau
 
 
   
@@ -756,6 +1313,3 @@ commands:
     action: bit
 
 
-
-
-    
