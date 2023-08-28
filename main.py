@@ -12,6 +12,7 @@ import webbrowser
 import platform
 import pyautogui
 import time
+from acoes.piadas import piadas
 
 # Inicialização da síntese de fala
 engine = pyttsx3.init()
@@ -114,6 +115,12 @@ def evaluate(text):
         fala('Mestre, tenho todo o tempo do mundo para você')
     elif entity == 'inf/feliz':
         fala('Estou sempre feliz quando estou com você mestre')
+
+    #ações
+
+    if entity == 'fala/piada':
+        res = piadas(text)
+        fala(res)
 
     print(f'tipo: {entity}')
 

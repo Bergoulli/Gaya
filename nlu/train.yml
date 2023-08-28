@@ -18,6 +18,24 @@ commands:
     input: gaia horas?
     entity: time
     action: getTime
+  
+  # piada
+  - command:
+    input: gaia me conte uma piada
+    entity: fala
+    action: piada
+  - command:
+    input: gaia me diga algo engraçado
+    entity: fala
+    action: piada
+  - command:
+    input: gaia conte uma piada
+    entity: fala
+    action: piada
+  - command:
+    input: gaia quero uma piada
+    entity: fala
+    action: piada
 
   #data
 
