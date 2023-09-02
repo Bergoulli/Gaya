@@ -13,7 +13,7 @@ import platform
 import pyautogui
 import time
 from acoes.piadas import piadas
-from acoes.youtube import video_download
+from acoes.youtube import video_download, musica_download
 
 # Inicialização da síntese de fala
 engine = pyttsx3.init()
@@ -123,9 +123,15 @@ def evaluate(text):
         res = piadas(text)
         fala(res)
 
-    if entity == 'fala/video':
-        video_download()
-        fala('video baixado com sucesso mestre')
+    if entity == 'fala/video' or entity == 'fala/musica':
+        if entity == 'fala/video':
+            fala('certo mestre, vou baixar o vídeo')
+            video_download()
+            fala('video baixado com sucesso mestre')
+        if entity == 'fala/musica':
+            fala('certo mestre, vou baixar a música')
+            musica_download()
+            fala('música baixada com sucesso mestre')
 
     print(f'tipo: {entity}')
 

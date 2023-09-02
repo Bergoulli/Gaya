@@ -858,6 +858,61 @@ commands:
     entity: fala
     action: agradecer
 
+    # musica youtube
+  - command:
+    input: gaia baixar musica
+    entity: fala
+    action: musica
+  - command:
+    input: gaia baixar uma musica
+    entity: fala
+    action: musica
+  - command:
+    input: gaia musica baixar
+    entity: fala
+    action: musica
+  - command:
+    input: gaia baixe a musica
+    entity: fala
+    action: musica
+  - command:
+    input: gaia baixar musica do youtube
+    entity: fala
+    action: musica
+  - command:
+    input: gaia baixe essa musica
+    entity: fala
+    action: musica
+
+    #video youtube
+  - command:
+    input: gaia baixar video
+    entity: fala
+    action: video
+  - command:
+    input: gaia baixar esse video
+    entity: fala
+    action: video
+  - command:
+    input: gaia baixe video
+    entity: fala
+    action: video
+  - command:
+    input: gaia baixe esse video
+    entity: fala
+    action: video
+  - command:
+    input: gaia baixar video do youtube
+    entity: fala
+    action: video
+  - command:
+    input: gaia baixar esse video do youtube
+    entity: fala
+    action: video
+  - command:
+    input: gaia baixe o video
+    entity: fala
+    action: video
 
     # passatempo
   - command:
