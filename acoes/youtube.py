@@ -8,7 +8,6 @@ from moviepy.editor import AudioFileClip
 import io
 
 def musica_download():
-    time.sleep(5)
     pyautogui.click(310, 57, clicks=1)
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(1)
