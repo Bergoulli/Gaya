@@ -6,7 +6,12 @@ Tecnologia:
     Sistema de leitura com básico de Machine Learning
 
 Funções do assistente:
-    Abrir programas
+    Abrir navegadores
+    Conversas simples
+    Baixar músicas .MP3
+    Baixar vídeos .MP4
+    Informações do sistema
+
 
 Observação:
     Para Utilizá-la, baixe todos os arquivos de bibliotecas_proj.txt e vá para o main.py, dê um "run code", para poder iniciar a conversa
