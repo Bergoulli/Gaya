@@ -20,7 +20,7 @@ from interface import imagem
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[-2].id)
-imagem()
+
 
 def fala(text):
     engine.say(text)
