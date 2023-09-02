@@ -14,11 +14,13 @@ import pyautogui
 import time
 from acoes.piadas import piadas
 from acoes.youtube import video_download, musica_download
+from interface import imagem
 
 # Inicialização da síntese de fala
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[-2].id)
+imagem()
 
 def fala(text):
     engine.say(text)
