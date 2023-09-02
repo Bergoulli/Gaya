@@ -5,8 +5,10 @@ import pyautogui
 import os
 import shutil
 from moviepy.editor import AudioFileClip
+import io
 
 def musica_download():
+    time.sleep(5)
     pyautogui.click(310, 57, clicks=1)
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(1)
@@ -23,25 +25,25 @@ def musica_download():
             audio_stream = video.streams.filter(only_audio=True).first()
             
             if audio_stream:
-                # Baixa o áudio
-                audio_filename = f'{video_title}.mp3'
-                audio_stream.download(output_path='temp', filename='temp_audio')
+                # Baixa o áudio como um arquivo temporário
+                temp_audio_filename = 'temp_audio.mp4'
+                audio_stream.download(filename=temp_audio_filename)
                 
                 # Converte o áudio para MP3
-                temp_audio_path = os.path.join('temp', 'temp_audio.mp4')
+                temp_audio_path = os.path.join('', temp_audio_filename)
                 audio = AudioFileClip(temp_audio_path)
-                audio.write_audiofile(audio_filename, codec='mp3')
                 
-                # Remove o arquivo temporário
-                os.remove(temp_audio_path)
-                
-                # Move o arquivo MP3 para a pasta "audios"
+                audio_filename = f'{video_title}.mp3'
                 destination_folder = "musicas"
+                
                 if not os.path.exists(destination_folder):
                     os.mkdir(destination_folder)
                 
                 destination_path = os.path.join(destination_folder, audio_filename)
-                os.rename(audio_filename, destination_path)
+                audio.write_audiofile(destination_path, codec='mp3')
+                
+                # Remove os arquivos temporários
+                os.remove(temp_audio_path)
                 
                 return video
             else:
