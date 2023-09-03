@@ -6,12 +6,44 @@ import os
 import shutil
 from moviepy.editor import AudioFileClip
 import io
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
 
-def musica_download():
+def click():
     pyautogui.click(310, 57, clicks=1)
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(1)
     link_copiado = pyperclip.paste()
+    return link_copiado
+
+def playlist_download():
+    # Substitua 'YOUR_PLAYLIST_URL' pela URL da sua playlist no YouTube
+    playlist_url = 'https://www.youtube.com/watch?v=i24MxljM-Bw&list=PLGFzROSPU9oVOK_4OojndjJggKV5ef1nQ'
+
+    # Configuração do webdriver (certifique-se de ter o Chrome e o driver do Chrome instalados)
+    driver = webdriver.Chrome()
+
+    try:
+        driver.get(playlist_url)
+        time.sleep(5)  # Espere um pouco para garantir que a página seja carregada
+        
+        # Localize o elemento que contém o número de vídeos na playlist
+        element = driver.find_element(By.CSS_SELECTOR, '.style-scope.ytd-playlist-sidebar-primary-info-renderer')
+
+        # Extraia o texto do elemento
+        num = element.text
+
+        print(f'Quantidade de vídeos na playlist: {num}')
+    except Exception as e:
+        print(f'Erro ao buscar a quantidade de vídeos: {str(e)}')
+    finally:
+        driver.quit()
+
+playlist_download()
+
+def musica_download():
+    link_copiado = click()
     
     if link_copiado.split('//')[0] == 'https:':
         try:
@@ -53,10 +85,7 @@ def musica_download():
         print("URL inválida")
 
 def video_download():
-    pyautogui.click(310, 57, clicks=1)
-    pyautogui.hotkey('ctrl', 'c')
-    time.sleep(1)
-    link_copiado = pyperclip.paste()
+    link_copiado = click()
     
     if link_copiado.split('//')[0] == 'https:':
         try:
