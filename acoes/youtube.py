@@ -9,6 +9,7 @@ import io
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 
 def click():
     pyautogui.click(310, 57, clicks=1)
@@ -17,30 +18,39 @@ def click():
     link_copiado = pyperclip.paste()
     return link_copiado
 
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+import time
+
 def playlist_download():
     # Substitua 'YOUR_PLAYLIST_URL' pela URL da sua playlist no YouTube
-    playlist_url = 'https://www.youtube.com/watch?v=i24MxljM-Bw&list=PLGFzROSPU9oVOK_4OojndjJggKV5ef1nQ'
+    playlist_url = 'https://youtube.com/playlist?list=PLLWTDkRZXQa9YyC1LMbuDTz3XVC4E9ZQA&si=jwow_K2MYT24qn04'
 
     # Configuração do webdriver (certifique-se de ter o Chrome e o driver do Chrome instalados)
-    driver = webdriver.Chrome()
+    servico = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=servico)
 
     try:
-        driver.get(playlist_url)
-        time.sleep(5)  # Espere um pouco para garantir que a página seja carregada
-        
-        # Localize o elemento que contém o número de vídeos na playlist
-        element = driver.find_element(By.CSS_SELECTOR, '.style-scope.ytd-playlist-sidebar-primary-info-renderer')
+            driver.get(playlist_url)
+            
+            # Espere um pouco para garantir que a página seja carregada
+            driver.implicitly_wait(20)
 
-        # Extraia o texto do elemento
-        num = element.text
+            # Localize o elemento que contém o número total de vídeos na playlist
+            element = driver.find_element(By.CSS_SELECTOR, '.byline-item style-scope ytd-playlist-byline-renderer')
 
-        print(f'Quantidade de vídeos na playlist: {num}')
+            # Extraia o número máximo de vídeos na playlist
+            num = element.text
+
+            print(f'Número máximo de vídeos na playlist: {num}')
     except Exception as e:
-        print(f'Erro ao buscar a quantidade de vídeos: {str(e)}')
+        print(f'Erro ao buscar o número máximo de vídeos: {str(e)}')
     finally:
         driver.quit()
 
 playlist_download()
+
 
 def musica_download():
     link_copiado = click()
