@@ -19,7 +19,7 @@ def click():
     return link_copiado
 
 def playlist_download():
-    playlist_url = 'https://www.youtube.com/watch?v=WQJQW4WpsDo&list=PLpnvonpYO5srnzw9x8fLuWtpEubcclvlS&index=1'
+    playlist_url = click()
     destination_folder = "musicas"
 
     if not os.path.exists(destination_folder):
