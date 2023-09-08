@@ -1,4 +1,4 @@
-from pytube import YouTube
+from pytube import YouTube, Playlist
 import pyperclip
 import time
 import pyautogui
@@ -18,37 +18,34 @@ def click():
     link_copiado = pyperclip.paste()
     return link_copiado
 
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
-import time
-
 def playlist_download():
-    # Substitua 'YOUR_PLAYLIST_URL' pela URL da sua playlist no YouTube
-    playlist_url = 'https://youtube.com/playlist?list=PLLWTDkRZXQa9YyC1LMbuDTz3XVC4E9ZQA&si=jwow_K2MYT24qn04'
+    playlist_url = 'https://www.youtube.com/watch?v=WQJQW4WpsDo&list=PLpnvonpYO5srnzw9x8fLuWtpEubcclvlS&index=1'
+    destination_folder = "musicas"
 
-    # Configuração do webdriver (certifique-se de ter o Chrome e o driver do Chrome instalados)
-    servico = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=servico)
+    if not os.path.exists(destination_folder):
+        os.mkdir(destination_folder)
 
-    try:
-            driver.get(playlist_url)
-            
-            # Espere um pouco para garantir que a página seja carregada
-            driver.implicitly_wait(20)
+    playlist = Playlist(playlist_url)
 
-            # Localize o elemento que contém o número total de vídeos na playlist
-            element = driver.find_element(By.CSS_SELECTOR, '.byline-item style-scope ytd-playlist-byline-renderer')
+    for url in playlist:
+        video = YouTube(url)
+        video_title = video.title
+        # Substitua caracteres inválidos por '_'
+        video_title = ''.join(c if c.isalnum() or c in (' ', '.', '_', '-') else '_' for c in video_title)
+        audio_filename = f'{video_title}.mp3'
+        destination_path = os.path.join(destination_folder, audio_filename)
 
-            # Extraia o número máximo de vídeos na playlist
-            num = element.text
+        if not os.path.exists(destination_path):
+            audio_stream = video.streams.filter(only_audio=True).first()
+            if audio_stream:
+                temp_audio_filename = f'{video_title}.mp4'
+                audio_stream.download(filename=temp_audio_filename)
+                temp_audio_path = os.path.join('', temp_audio_filename)
 
-            print(f'Número máximo de vídeos na playlist: {num}')
-    except Exception as e:
-        print(f'Erro ao buscar o número máximo de vídeos: {str(e)}')
-    finally:
-        driver.quit()
+                audio = AudioFileClip(temp_audio_path)
+                audio.write_audiofile(destination_path, codec='mp3')
 
+                os.remove(temp_audio_path)
 playlist_download()
 
 

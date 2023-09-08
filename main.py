@@ -22,6 +22,7 @@ voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[-2].id)
 
 
+
 def fala(text):
     engine.say(text)
     engine.runAndWait()
@@ -30,7 +31,6 @@ def load_labels(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         labels = [line.strip() for line in file]
     return labels
-
 def evaluate(text):
     entity = classify(model_keras, labels, text)
     
@@ -132,6 +132,10 @@ def evaluate(text):
             fala('video baixado com sucesso mestre')
         if entity == 'fala/musica':
             fala('certo mestre, vou baixar a música')
+            musica_download()
+            fala('música baixada com sucesso mestre')
+        if entity == 'fala/playlist':
+            input(fala('certo mestre, quantas músicas irei baixar'))
             musica_download()
             fala('música baixada com sucesso mestre')
 
