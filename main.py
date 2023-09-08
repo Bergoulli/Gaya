@@ -125,7 +125,7 @@ def evaluate(text):
         res = piadas(text)
         fala(res)
 
-    if entity == 'fala/video' or entity == 'fala/musica':
+    if entity == 'fala/video' or entity == 'fala/musica' or entity == 'fala/playlist':
         if entity == 'fala/video':
             fala('certo mestre, vou baixar o vídeo')
             video_download()
@@ -135,7 +135,7 @@ def evaluate(text):
             musica_download()
             fala('música baixada com sucesso mestre')
         if entity == 'fala/playlist':
-            input(fala('Certo, vou baixar a playlist mestre em MP3'))
+            fala('Certo, vou baixar a playlist mestre em MP3')
             playlist_download()
             fala('músicas baixadas com sucesso mestre')
 
