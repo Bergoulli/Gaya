@@ -7,7 +7,6 @@ import json
 import core
 from nlu.classificador import classify
 from keras.models import load_model
-import subprocess
 import webbrowser
 import platform
 import pyautogui
