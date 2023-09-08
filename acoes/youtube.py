@@ -26,9 +26,12 @@ def playlist_download():
         os.mkdir(destination_folder)
 
     playlist = Playlist(playlist_url)
+    i = 0
 
     for url in playlist:
+        i += 1
         video = YouTube(url)
+        
         video_title = video.title
         # Substitua caracteres inválidos por '_'
         video_title = ''.join(c if c.isalnum() or c in (' ', '.', '_', '-') else '_' for c in video_title)
@@ -46,6 +49,7 @@ def playlist_download():
                 audio.write_audiofile(destination_path, codec='mp3')
 
                 os.remove(temp_audio_path)
+                print(f'vídeo {i} baixado')
 
 def musica_download():
     link_copiado = click()
