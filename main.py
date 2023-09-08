@@ -13,7 +13,7 @@ import platform
 import pyautogui
 import time
 from acoes.piadas import piadas
-from acoes.youtube import video_download, musica_download
+from acoes.youtube import video_download, musica_download, playlist_download
 from interface import imagem
 
 # Inicialização da síntese de fala
@@ -135,9 +135,9 @@ def evaluate(text):
             musica_download()
             fala('música baixada com sucesso mestre')
         if entity == 'fala/playlist':
-            input(fala('certo mestre, quantas músicas irei baixar'))
-            musica_download()
-            fala('música baixada com sucesso mestre')
+            input(fala('Certo, vou baixar a playlist mestre em MP3'))
+            playlist_download()
+            fala('músicas baixadas com sucesso mestre')
 
     print(f'tipo: {entity}')
 

@@ -46,8 +46,6 @@ def playlist_download():
                 audio.write_audiofile(destination_path, codec='mp3')
 
                 os.remove(temp_audio_path)
-playlist_download()
-
 
 def musica_download():
     link_copiado = click()

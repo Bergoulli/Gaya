@@ -3,19 +3,27 @@ commands:
   #horas
 
   - command:
-    input: gaia Que horas são?
+    input: gaia Que horas são
     entity: time
     action: getTime
   - command:
-    input: gaia Me diga as horas.
+    input: gaia Me diga as horas
     entity: time
     action: getTime
   - command:
-    input: gaia Pode me dizer que horas são?
+    input: gaia Me diga horas
     entity: time
     action: getTime
   - command:
-    input: gaia horas?
+    input: gaia Pode me dizer que horas são
+    entity: time
+    action: getTime
+  - command:
+    input: gaia horas
+    entity: time
+    action: getTime
+  - command:
+    input: gaia quais as horas
     entity: time
     action: getTime
   
@@ -1277,10 +1285,6 @@ commands:
     entity: fala
     action: aniver
 
-
-
-   
-
     # trabalho
 
   - command:
@@ -1392,6 +1396,42 @@ commands:
     input: gaia tchauzinho
     entity: fala
     action: tchau
+
+    #Playlist
+
+  - command:
+    input: gaia baixar lista de videos
+    entity: fala
+    action: playlist
+  - command:
+    input: gaia baixar lista de video
+    entity: fala
+    action: playlist
+  - command:
+    input: gaia baixar lista de músicas
+    entity: fala
+    action: playlist
+  - command:
+    input: gaia baixar lista de mp3
+    entity: fala
+    action: playlist
+  - command:
+    input: gaia baixar lista de audio
+    entity: fala
+    action: playlist
+  - command:
+    input: gaia baixar lista de musica
+    entity: fala
+    action: playlist
+  - command:
+    input: gaia baixar listas de musicas
+    entity: fala
+    action: playlist
+  - command:
+    input: gaia baixar listas de musica
+    entity: fala
+    action: playlist
+    
 
 
   
