@@ -8,3 +8,4 @@ Python 3.11.4
 psutil 5.9.5
 Microsoft C++ 2015, 2017, 2019
 pyyaml 6.0.1
+scribd-dl 0.4.5
